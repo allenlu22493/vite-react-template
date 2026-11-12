@@ -1,45 +1,542 @@
 #root {
-	max-width: 1280px;
+	min-height: 100vh;
+}
+
+.site-shell {
+	--ink: #20352f;
+	--muted: #68756c;
+	--paper: #f7f6f0;
+	--green: #355b4b;
+	--orange: #bc6545;
+	--line: #dedfd5;
+	max-width: 1440px;
 	margin: 0 auto;
-	padding: 2rem;
+	overflow: hidden;
+	background: var(--paper);
+	color: var(--ink);
+}
+
+.site-header {
+	height: 88px;
+	padding: 0 8.3%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid rgba(32, 53, 47, 0.1);
+}
+
+.brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.brand-seal {
+	width: 36px;
+	height: 36px;
+	display: grid;
+	place-items: center;
+	border: 1px solid var(--orange);
+	color: var(--orange);
+	font-family: "Noto Serif TC", "Songti TC", serif;
+	font-size: 20px;
+}
+
+.brand-name {
+	font-family: "Noto Serif TC", "Songti TC", serif;
+	font-size: 17px;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+}
+
+.main-nav {
+	display: flex;
+	align-items: center;
+	gap: 36px;
+	font-size: 13px;
+}
+
+.main-nav a {
+	color: var(--ink);
+	text-decoration: none;
+	transition: color 160ms ease;
+}
+
+.main-nav a:hover,
+.text-link:hover {
+	color: var(--orange);
+}
+
+.main-nav .nav-cta {
+	padding: 11px 17px;
+	border: 1px solid var(--green);
+	border-radius: 2px;
+	color: var(--green);
+}
+
+.nav-cta span {
+	margin-left: 9px;
+}
+
+.hero {
+	min-height: 570px;
+	position: relative;
+	padding: 86px 12.5% 72px;
+	display: grid;
+	grid-template-columns: 1fr 0.85fr;
+	align-items: center;
+	gap: 50px;
+}
+
+.hero-copy {
+	position: relative;
+	z-index: 1;
+	max-width: 530px;
+}
+
+.eyebrow {
+	margin: 0 0 23px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--orange);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.18em;
+}
+
+.eyebrow > span {
+	width: 22px;
+	height: 1px;
+	background: var(--orange);
+}
+
+.hero h1,
+.section-heading h2,
+.closing-banner h2 {
+	margin: 0;
+	font-family: "Noto Serif TC", "Songti TC", serif;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+}
+
+.hero h1 {
+	font-size: clamp(42px, 5vw, 65px);
+	line-height: 1.45;
+}
+
+.hero h1 em,
+.section-heading h2 em,
+.closing-banner h2 em {
+	color: var(--green);
+	font-style: normal;
+}
+
+.hero-description {
+	max-width: 440px;
+	margin: 22px 0 29px;
+	color: var(--muted);
+	font-size: 15px;
+	line-height: 2.1;
+}
+
+.primary-button {
+	min-width: 142px;
+	padding: 14px 19px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	background: var(--green);
+	color: #fff;
+	font-size: 13px;
+	text-decoration: none;
+	transition: background 160ms ease, transform 160ms ease;
+}
+
+.primary-button:hover {
+	transform: translateY(-2px);
+	background: #29483b;
+}
+
+.hero-note {
+	margin: 15px 0 0;
+	color: #899087;
+	font-size: 11px;
+}
+
+.hero-art {
+	width: min(100%, 390px);
+	aspect-ratio: 1;
+	position: relative;
+	justify-self: center;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	background: #e9e9dc;
+}
+
+.sun-disc {
+	width: 58%;
+	aspect-ratio: 1;
+	position: absolute;
+	border-radius: 50%;
+	background: #d7a47a;
+	opacity: 0.74;
+	transform: translate(20%, -18%);
+}
+
+.art-ring {
+	position: absolute;
+	border: 1px solid rgba(53, 91, 75, 0.34);
+	border-radius: 50%;
+}
+
+.art-ring--outer {
+	inset: 10%;
+}
+
+.art-ring--inner {
+	inset: 19%;
+	border-style: dashed;
+	border-color: rgba(53, 91, 75, 0.45);
+}
+
+.art-character {
+	z-index: 1;
+	color: var(--green);
+	font-family: "Noto Serif TC", "Songti TC", serif;
+	font-size: clamp(100px, 15vw, 170px);
+	font-weight: 400;
+	line-height: 1;
+	text-shadow: 0 2px 0 rgba(247, 246, 240, 0.5);
+}
+
+.art-caption {
+	position: absolute;
+	bottom: 15%;
+	z-index: 2;
+	color: var(--green);
+	font-size: 11px;
+	letter-spacing: 0.32em;
+}
+
+.art-stamp {
+	width: 52px;
+	height: 52px;
+	position: absolute;
+	right: 9%;
+	bottom: 23%;
+	display: grid;
+	place-content: center;
+	border: 1px solid var(--orange);
+	color: var(--orange);
+	font-family: "Noto Serif TC", "Songti TC", serif;
+	font-size: 12px;
+	line-height: 1.4;
+	text-align: center;
+	transform: rotate(8deg);
+}
+
+.art-dot {
+	width: 8px;
+	height: 8px;
+	position: absolute;
+	border-radius: 50%;
+	background: var(--orange);
+}
+
+.art-dot--one { top: 17%; left: 25%; }
+.art-dot--two { right: 18%; top: 30%; width: 5px; height: 5px; }
+
+.hero-index {
+	position: absolute;
+	bottom: 32px;
+	left: 8.3%;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: #8c9389;
+	font-size: 10px;
+	letter-spacing: 0.1em;
+}
+
+.hero-index span {
+	width: 32px;
+	height: 1px;
+	background: #b7bdb3;
+}
+
+.intro-strip {
+	min-height: 100px;
+	padding: 24px 12.5%;
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	border-top: 1px solid var(--line);
+	border-bottom: 1px solid var(--line);
+	background: #f0f0e8;
+}
+
+.intro-label {
+	flex: 0 0 auto;
+	margin: 0;
+	color: var(--orange);
+	font-size: 11px;
+	letter-spacing: 0.15em;
+}
+
+.intro-strip > p:nth-child(2) {
+	margin: 0;
+	font-family: "Noto Serif TC", "Songti TC", serif;
+	font-size: 17px;
+	letter-spacing: 0.04em;
+}
+
+.intro-mark {
+	margin-left: auto;
+	color: #9da795;
+	font-size: 25px;
+}
+
+.services-section {
+	padding: 100px 12.5% 94px;
+}
+
+.section-heading {
+	margin-bottom: 38px;
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	gap: 35px;
+}
+
+.section-heading .eyebrow {
+	margin-bottom: 14px;
+}
+
+.section-heading h2,
+.closing-banner h2 {
+	font-size: clamp(30px, 3.5vw, 43px);
+	line-height: 1.5;
+}
+
+.section-description {
+	max-width: 270px;
+	margin: 0 0 7px;
+	color: var(--muted);
+	font-size: 12px;
+	line-height: 1.9;
+}
+
+.service-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 20px;
+}
+
+.service-card {
+	min-height: 300px;
+	padding: 27px 30px 22px;
+	border: 1px solid var(--line);
+	background: #fbfaf6;
+	display: flex;
+	flex-direction: column;
+	transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.service-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 12px 30px rgba(32, 53, 47, 0.07);
+}
+
+.service-card--featured {
+	border-top: 2px solid var(--orange);
+}
+
+.service-card-top,
+.service-card-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.service-number {
+	color: #969d92;
+	font-size: 11px;
+	letter-spacing: 0.12em;
+}
+
+.service-label {
+	padding: 5px 9px;
+	border: 1px solid #e4e3d9;
+	color: var(--muted);
+	font-size: 10px;
+	letter-spacing: 0.08em;
+}
+
+.service-card--featured .service-label {
+	border-color: #e6c8b7;
+	color: var(--orange);
+}
+
+.service-icon {
+	width: 42px;
+	height: 42px;
+	margin-top: 24px;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	background: #eeefe7;
+	color: var(--green);
+	font-family: "Noto Serif TC", "Songti TC", serif;
+	font-size: 20px;
+}
+
+.service-card h3 {
+	margin: 16px 0 8px;
+	font-family: "Noto Serif TC", "Songti TC", serif;
+	font-size: 22px;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+}
+
+.service-card > p {
+	max-width: 410px;
+	margin: 0 0 22px;
+	color: var(--muted);
+	font-size: 12px;
+	line-height: 1.9;
+}
+
+.service-card-bottom {
+	margin-top: auto;
+	padding-top: 15px;
+	border-top: 1px solid #e8e8df;
+	color: var(--orange);
+	font-size: 11px;
+}
+
+.service-arrow {
+	font-size: 16px;
+}
+
+.coming-note {
+	margin: 25px 0 0;
+	color: #7d877d;
+	font-size: 11px;
 	text-align: center;
 }
 
-.logo {
-	height: 6em;
-	padding: 1.5em;
-	will-change: filter;
-	transition: filter 300ms;
-}
-.logo:hover {
-	filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-	filter: drop-shadow(0 0 2em #61dafbaa);
-}
-.logo.cloudflare:hover {
-	filter: drop-shadow(0 0 2em #f6821faa);
+.coming-note span {
+	margin-right: 7px;
+	color: var(--orange);
 }
 
-@keyframes logo-spin {
-	from {
-		transform: rotate(0deg);
+.closing-banner {
+	padding: 60px 20px 66px;
+	background: #e9e9df;
+	text-align: center;
+}
+
+.closing-banner .eyebrow {
+	justify-content: center;
+	margin-bottom: 12px;
+}
+
+.closing-banner h2 {
+	font-size: clamp(27px, 3.3vw, 40px);
+}
+
+.text-link {
+	margin-top: 20px;
+	display: inline-flex;
+	gap: 16px;
+	color: var(--green);
+	font-size: 12px;
+	text-decoration: none;
+	transition: color 160ms ease;
+}
+
+.site-footer {
+	min-height: 92px;
+	padding: 20px 8.3%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.footer-brand .brand-seal {
+	width: 30px;
+	height: 30px;
+	font-size: 16px;
+}
+
+.footer-brand .brand-name {
+	font-size: 13px;
+}
+
+.site-footer > p,
+.copyright {
+	margin: 0;
+	color: #828b81;
+	font-size: 10px;
+	line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+	.site-header {
+		height: 72px;
+		padding: 0 6%;
 	}
-	to {
-		transform: rotate(360deg);
+
+	.brand-name { font-size: 15px; }
+	.main-nav { gap: 16px; font-size: 12px; }
+	.main-nav .nav-cta { padding: 9px 10px; }
+	.main-nav > a:first-child { display: none; }
+
+	.hero {
+		min-height: unset;
+		padding: 68px 8% 78px;
+		grid-template-columns: 1fr;
+		gap: 38px;
+	}
+
+	.hero-copy { max-width: 100%; }
+	.hero h1 { font-size: clamp(42px, 10vw, 58px); }
+	.hero-description { font-size: 14px; }
+	.hero-art { width: min(78vw, 330px); }
+	.hero-index { left: 8%; bottom: 25px; }
+
+	.intro-strip {
+		padding: 25px 8%;
+		gap: 14px;
+	}
+
+	.intro-strip > p:nth-child(2) { font-size: 14px; line-height: 1.8; }
+	.intro-mark { display: none; }
+
+	.services-section { padding: 72px 8% 68px; }
+	.section-heading { display: block; }
+	.section-description { margin-top: 12px; }
+	.service-grid { grid-template-columns: 1fr; gap: 14px; }
+	.service-card { min-height: 280px; padding: 23px; }
+	.closing-banner { padding: 50px 8%; }
+
+	.site-footer {
+		padding: 24px 8%;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 12px;
 	}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	a:nth-of-type(2) .logo {
-		animation: logo-spin infinite 20s linear;
-	}
-}
-
-.card {
-	padding: 2em;
-}
-
-.read-the-docs {
-	color: #888;
+@media (max-width: 380px) {
+	.main-nav { gap: 10px; }
+	.main-nav .nav-cta { font-size: 11px; }
+	.brand { gap: 8px; }
+	.brand-name { font-size: 13px; }
 }
