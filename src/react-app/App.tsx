@@ -9,7 +9,7 @@ import "./App.css";
 
 function App() {
 	const [count, setCount] = useState(0);
-	const [name, setName] = useState("unknown");
+	const [name, setName] = useState("未知");
 
 	return (
 		<>
@@ -35,12 +35,12 @@ function App() {
 			<div className="card">
 				<button
 					onClick={() => setCount((count) => count + 1)}
-					aria-label="increment"
+					aria-label="增加計數"
 				>
-					count is {count}
+					計數：{count}
 				</button>
 				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
+					編輯 <code>src/App.tsx</code> 並儲存以測試 HMR
 				</p>
 			</div>
 			<div className="card">
@@ -50,15 +50,15 @@ function App() {
 							.then((res) => res.json() as Promise<{ name: string }>)
 							.then((data) => setName(data.name));
 					}}
-					aria-label="get name"
+					aria-label="取得名稱"
 				>
-					Name from API is: {name}
+					API 名稱：{name}
 				</button>
 				<p>
-					Edit <code>worker/index.ts</code> to change the name
+					編輯 <code>worker/index.ts</code> 以修改名稱
 				</p>
 			</div>
-			<p className="read-the-docs">Click on the logos to learn more</p>
+			<p className="read-the-docs">點擊標誌以了解更多</p>
 		</>
 	);
 }
