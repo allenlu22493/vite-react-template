@@ -6,7 +6,7 @@ const services = [
 		title: "古易姓名學",
 		label: "首波服務",
 		description:
-			從漢字字形、字義與傳統姓名學觀點出發，陪你重新認識名字裡的文化意涵與祝福。",
+			"從漢字字形、字義與傳統姓名學觀點出發，陪你重新認識名字裡的文化意涵與祝福。",
 		status: "即將推出",
 		className: "service-card--featured",
 	},
@@ -15,7 +15,7 @@ const services = [
 		title: "姓名學知陽宅",
 		label: "規劃中",
 		description:
-			探索姓名學與居家生活的連結，將傳統觀點轉化為更貼近日常的參考工具。",
+			"探索姓名學與居家生活的連結，將傳統觀點轉化為更貼近日常的參考工具。",
 		status: "工具陸續增加中",
 		className: "",
 	},
